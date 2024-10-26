@@ -1,31 +1,24 @@
-import java.util.Arrays;
 
 public class GroceryStoreApp {
     public static void main(String[] args) {
-        // Creating products
-        Product apple = new Product("Apple", 0.99);
-        Product milk = new Product("Milk", 1.99);
-        Product bread = new Product("Bread", 2.49);
-        Product chocolate = new Product("Chocolate", 1.50);
-
-        // Creating aisles
-        Aisle produceAisle = new Aisle("Produce", Arrays.asList(apple));
-        Aisle dairyAisle = new Aisle("Dairy", Arrays.asList(milk));
-        Aisle breadAisle = new Aisle("Bread", Arrays.asList(bread));
-        Aisle sweetsAisle = new Aisle("Sweets", Arrays.asList(chocolate));
-
-        // Creating store with aisles
-        Store store = new Store(Arrays.asList(produceAisle, dairyAisle, breadAisle, sweetsAisle));
-
-        // Creating a shopper and browsing the store
+        Store store = new Store();
         Shopper shopper = new Shopper();
+
+        // Browse the store and display aisles
         shopper.browseStore(store);
 
-        // Adding items to cart
-        shopper.getCart().addItem(apple);
-        shopper.getCart().addItem(milk);
+        // Add items to the cart
+        Aisle produceAisle = store.getAisles().get(0); // Example to get the first aisle
+        shopper.getCart().addItem(produceAisle.getProducts().get(0)); // Add first product
+        shopper.getCart().addItem(produceAisle.getProducts().get(1)); // Add second product
+        Aisle dairyAisle = store.getAisles().get(1);
+        shopper.getCart().addItem(dairyAisle.getProducts().get(1));
+        // Display cart contents
+        shopper.getCart().displayCart();
 
-        // Checking out
+        // Checkout
         shopper.checkout(store);
+
+   
     }
 }

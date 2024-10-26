@@ -8,12 +8,14 @@ public class Product {
     }
 
     public String getDetails() {
-        return "Product: " + productName + ", Price: $" + price;
+        return productName + " - $" + String.format("%.2f", price);
     }
 
-    // Getter for price
     public double getPrice() {
         return price;
     }
-}
 
+    public String getProductName() {
+        return productName;
+    }
+}

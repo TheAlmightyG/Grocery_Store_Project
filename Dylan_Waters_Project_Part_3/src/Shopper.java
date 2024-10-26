@@ -2,11 +2,10 @@ public class Shopper {
     private Cart cart;
 
     public Shopper() {
-        this.cart = new Cart();
+        cart = new Cart();
     }
 
     public void browseStore(Store store) {
-        System.out.println("Browsing the store...");
         store.displayAisles();
     }
 

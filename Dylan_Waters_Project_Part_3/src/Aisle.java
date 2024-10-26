@@ -14,9 +14,13 @@ public class Aisle {
     }
 
     public void displayProducts() {
-        System.out.println("Products in " + aisleName + " Aisle:");
+        System.out.println("Products in " + aisleName + ":");
         for (Product product : products) {
             System.out.println(product.getDetails());
         }
+    }
+
+    public List<Product> getProducts() {
+        return products;
     }
 }

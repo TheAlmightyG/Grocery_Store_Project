@@ -1,0 +1,2 @@
+Apple,0.5
+Banana,0.3
